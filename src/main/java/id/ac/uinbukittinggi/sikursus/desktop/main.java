@@ -10,7 +10,7 @@ package id.ac.uinbukittinggi.sikursus.desktop;
  * @author USER
  */
 public class main {
-    public static void main(String[] args) {
-        System.out.println("Sikursus Desktop Siap Dikembangkan");
+        public static void main(String[] args) {
+        System.out.println("SIKURSUS Desktop siap di kembangkan");
     }
 }
