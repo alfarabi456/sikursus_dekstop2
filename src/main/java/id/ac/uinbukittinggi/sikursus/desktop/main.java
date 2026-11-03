@@ -1,16 +1,31 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package id.ac.uinbukittinggi.sikursus.desktop;
 
-/**
- *
- * @author USER
- */
+import dao.PesertaDAO;
+import model.Peserta;
+import java.sql.SQLException;
+
 public class main {
+
     public static void main(String[] args) {
-        System.out.println("Sikursus Desktop Siap Dikembangkan");
+
+        try {
+            PesertaDAO dao = new PesertaDAO();
+
+            for (Peserta p : dao.findAll()) {
+                System.out.println(
+                    p.getId() + " - "
+                    + p.getNim() + " - "
+                    + p.getNama() + " - "
+                    + p.getJenisKelamin() + " - "
+                    + p.getProdi() + " - "
+                    + p.getNoHp() + " - "
+                    + p.getEmail()
+                );
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Gagal mengambil data peserta:");
+            e.printStackTrace();
+        }
     }
 }
